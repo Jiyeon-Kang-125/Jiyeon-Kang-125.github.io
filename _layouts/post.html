@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    {% assign cat = page.categories[0] %}
+    {% assign cat_info = site.data.categories[cat] %}
+    {% if cat_info %}
+      <a class="tag tag-{{ cat }}" href="{{ site.baseurl }}/{{ cat }}/">{{ cat_info.label }}</a>
+    {% endif %}
+    <h1>{{ page.title }}</h1>
+    <div class="meta">
+      <time>{{ page.date | date: "%Y년 %-m월 %-d일" }}</time>
+      {% assign words = content | strip_html | number_of_words %}
+      {% assign minutes = words | divided_by: 350 | plus: 1 %}
+      <span class="dot">·</span>
+      <span>{{ minutes }}분 정도 읽기</span>
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <nav class="post-pager">
+    {% if page.previous %}
+      <a class="pager-link prev" href="{{ page.previous.url | relative_url }}">
+        <span class="pager-label">← 이전 글</span>
+        <span class="pager-title">{{ page.previous.title }}</span>
+      </a>
+    {% endif %}
+    {% if page.next %}
+      <a class="pager-link next" href="{{ page.next.url | relative_url }}">
+        <span class="pager-label">다음 글 →</span>
+        <span class="pager-title">{{ page.next.title }}</span>
+      </a>
+    {% endif %}
+  </nav>
+</article>

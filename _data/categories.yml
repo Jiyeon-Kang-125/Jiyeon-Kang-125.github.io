@@ -1,0 +1,9 @@
+projects:
+  label: "작업물"
+  desc: "만들고 실험한 프로젝트들을 기록합니다."
+ai-study:
+  label: "AI 공부"
+  desc: "AI를 공부하며 정리한 내용들입니다."
+paper-review:
+  label: "논문 분석"
+  desc: "읽은 논문을 분석하고 정리합니다."

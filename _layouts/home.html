@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="eyebrow">기록 노트</p>
+  <h1>{{ site.tagline }}</h1>
+  <div class="lede">{{ content }}</div>
+  <nav class="hero-links">
+    <a href="{{ '/projects/' | relative_url }}">작업물 보기 →</a>
+    <a href="{{ '/ai-study/' | relative_url }}">AI 공부 보기 →</a>
+    <a href="{{ '/paper-review/' | relative_url }}">논문 분석 보기 →</a>
+  </nav>
+</section>
+
+<section class="post-list">
+  <h2 class="section-title">최근 글</h2>
+
+  {% if site.posts.size == 0 %}
+    <p class="empty">아직 글이 없어요. 첫 글을 써보세요.</p>
+  {% endif %}
+
+  {% for post in site.posts limit:10 %}
+    {% assign cat = post.categories[0] %}
+    {% assign cat_info = site.data.categories[cat] %}
+    <article class="post-row">
+      <a class="post-row-link" href="{{ post.url | relative_url }}">
+        {% if cat_info %}<span class="tag tag-{{ cat }}">{{ cat_info.label }}</span>{% endif %}
+        <h3>{{ post.title }}</h3>
+        <div class="meta">
+          <time>{{ post.date | date: "%Y.%m.%d" }}</time>
+        </div>
+        {% if post.excerpt %}<p class="excerpt">{{ post.excerpt | strip_html | truncate: 110 }}</p>{% endif %}
+      </a>
+    </article>
+  {% endfor %}
+</section>

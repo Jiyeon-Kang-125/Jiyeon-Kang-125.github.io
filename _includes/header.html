@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav">
+      <a href="{{ '/projects/' | relative_url }}"{% if page.cat_slug == 'projects' %} class="is-active"{% endif %}>작업물</a>
+      <a href="{{ '/ai-study/' | relative_url }}"{% if page.cat_slug == 'ai-study' %} class="is-active"{% endif %}>AI 공부</a>
+      <a href="{{ '/paper-review/' | relative_url }}"{% if page.cat_slug == 'paper-review' %} class="is-active"{% endif %}>논문 분석</a>
+      <a href="{{ '/about/' | relative_url }}">소개</a>
+    </nav>
+  </div>
+</header>

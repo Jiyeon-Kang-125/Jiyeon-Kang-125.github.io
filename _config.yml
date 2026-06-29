@@ -1,0 +1,31 @@
+# ── 기본 정보 (자유롭게 수정하세요) ───────────────────────
+title: "Jiyeon Kang"
+tagline: "만든 것, 공부한 것, 읽은 논문을 기록합니다."
+description: "작업물, AI 공부, 논문 분석을 기록하는 개인 블로그"
+github_username: "Jiyeon-Kang-125"
+
+# GitHub Pages 사용자 사이트(예: jiyeon-kang-125.github.io)로 운영한다면
+# 아래 url을 그대로 두고, 저장소 이름을 정확히
+#   Jiyeon-Kang-125.github.io
+# 로 만들면 됩니다. (자세한 설명은 README.md 참고)
+url: "https://jiyeon-kang-125.github.io"
+baseurl: ""
+
+# ── 빌드 설정 ─────────────────────────────────────────
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+permalink: /:categories/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules

@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<section class="post-list category-page">
+  <p class="eyebrow">카테고리</p>
+  <h1>{{ page.cat_label }}</h1>
+  <p class="lede-sm">{{ page.cat_desc }}</p>
+
+  {% assign filtered = site.categories[page.cat_slug] %}
+  {% if filtered.size == 0 %}
+    <p class="empty">아직 글이 없어요. 곧 채워질 예정입니다.</p>
+  {% endif %}
+
+  {% for post in filtered %}
+    <article class="post-row">
+      <a class="post-row-link" href="{{ post.url | relative_url }}">
+        <h3>{{ post.title }}</h3>
+        <div class="meta">
+          <time>{{ post.date | date: "%Y.%m.%d" }}</time>
+        </div>
+        {% if post.excerpt %}<p class="excerpt">{{ post.excerpt | strip_html | truncate: 110 }}</p>{% endif %}
+      </a>
+    </article>
+  {% endfor %}
+</section>
