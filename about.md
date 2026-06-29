@@ -1,14 +1,14 @@
 ---
 layout: default
-title: 소개
+title: About
 permalink: /about/
 ---
 
 <section class="about-page">
 
-# 소개
+About Me
 
-안녕하세요, Jiyeon입니다.
+안녕하세요, Kang Jiyeon입니다.
 
 이 공간은 세 가지를 기록하려고 만들었습니다.
 
